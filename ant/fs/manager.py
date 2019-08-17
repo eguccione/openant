@@ -181,7 +181,7 @@ class Application:
         self._beacons.task_done()
         return b
 
-    def _get_command(self, timeout=15.0):
+    def _get_command(self, timeout=5.0):
         _logger.debug("Get command, t%d, s%d", timeout, self._queue.qsize())
         c = self._queue.get(True, timeout)
         self._queue.task_done()
